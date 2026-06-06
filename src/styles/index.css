@@ -1,0 +1,15 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent Tailwind preflight image rules from breaking Google Maps tiles. */
+.gm-style img,
+img[src*="googleapis.com/maps"],
+img[src*="gstatic.com/mapfiles"] {
+  max-width: none !important;
+}
