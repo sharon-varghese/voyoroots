@@ -67,7 +67,7 @@ export function TourPackages() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-100">
+          <Badge className="mb-4 bg-[#f5ead7] text-[#8a5a13] hover:bg-[#f5ead7]">
             Tour Packages
           </Badge>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
@@ -121,10 +121,10 @@ export function TourPackages() {
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                   <div>
                     <span className="text-sm text-gray-500">Starting from</span>
-                    <div className="text-2xl font-bold text-blue-600">{tour.price}</div>
+                    <div className="text-2xl font-bold text-[#06213d]">{tour.price}</div>
                   </div>
                   <Button 
-                    className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700"
+                    className="bg-[#06213d] hover:bg-[#0b3158]"
                     onClick={() => handleBookTour(tour)}
                   >
                     Book

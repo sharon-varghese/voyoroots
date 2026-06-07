@@ -335,7 +335,7 @@ export function TaxiService() {
         directionsRendererRef.current = new window.google.maps.DirectionsRenderer({
           suppressMarkers: true,
           polylineOptions: {
-            strokeColor: "#f97316",
+            strokeColor: "#b77b1c",
             strokeOpacity: 0.9,
             strokeWeight: 5,
           },
@@ -734,7 +734,7 @@ export function TaxiService() {
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Premium Taxi Service
-              <span className="block mt-2 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+              <span className="block mt-2 bg-gradient-to-r from-[#b77b1c] to-[#d39a34] bg-clip-text text-transparent">
                 Ride with Comfort
               </span>
             </h2>
@@ -745,8 +745,8 @@ export function TaxiService() {
             <div className="grid sm:grid-cols-2 gap-6 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-lg flex items-center justify-center">
-                    <feature.icon className="w-6 h-6 text-orange-600" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#f5ead7] to-[#ecd2a6] rounded-lg flex items-center justify-center">
+                    <feature.icon className="w-6 h-6 text-[#8a5a13]" />
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">{feature.title}</h3>
@@ -756,7 +756,7 @@ export function TaxiService() {
               ))}
             </div>
 
-            <Button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 px-8">
+            <Button className="bg-[#b77b1c] hover:bg-[#9a6516] px-8">
               Download App
             </Button>
           </div>
@@ -768,7 +768,7 @@ export function TaxiService() {
               {/*
               <div className="mb-6 flex items-center">
                 <button
-                  className="inline-flex items-center gap-2 rounded-lg border border-orange-200 bg-orange-50 px-4 py-2 text-sm font-medium text-orange-700"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#ecd2a6] bg-[#fbf6ec] px-4 py-2 text-sm font-medium text-[#8a5a13]"
                   onClick={() => setBookingType("package")}
                 >
                   <Calendar className="h-4 w-4" />
@@ -787,8 +787,8 @@ export function TaxiService() {
                         ref={pickupInputRef}
                         type="text"
                         placeholder="Search pickup location"
-                        className={`w-full h-12 pl-12 pr-3 rounded-lg border transition focus:outline-none focus:ring-2 focus:ring-orange-400 ${
-                          activePicker === "pickup" ? "border-orange-400 bg-orange-50/40" : "border-gray-300"
+                        className={`w-full h-12 pl-12 pr-3 rounded-lg border transition focus:outline-none focus:ring-2 focus:ring-[#d39a34] ${
+                          activePicker === "pickup" ? "border-[#d39a34] bg-[#fbf6ec]" : "border-gray-300"
                         }`}
                         value={normalBooking.pickup}
                         onChange={(event) => handleNormalInputChange("pickup", event.target.value)}
@@ -807,8 +807,8 @@ export function TaxiService() {
                         ref={dropoffInputRef}
                         type="text"
                         placeholder="Search destination"
-                        className={`w-full h-12 pl-12 pr-3 rounded-lg border transition focus:outline-none focus:ring-2 focus:ring-orange-400 ${
-                          activePicker === "dropoff" ? "border-orange-400 bg-orange-50/40" : "border-gray-300"
+                        className={`w-full h-12 pl-12 pr-3 rounded-lg border transition focus:outline-none focus:ring-2 focus:ring-[#d39a34] ${
+                          activePicker === "dropoff" ? "border-[#d39a34] bg-[#fbf6ec]" : "border-gray-300"
                         }`}
                         value={normalBooking.dropoff}
                         onChange={(event) => handleNormalInputChange("dropoff", event.target.value)}
@@ -819,7 +819,7 @@ export function TaxiService() {
                     </div>
                   </div>
 
-                  <div className="rounded-2xl border border-orange-100 bg-orange-50/60 p-4">
+                  <div className="rounded-2xl border border-[#ecd2a6] bg-[#fbf6ec] p-4">
                     <p className="text-sm font-semibold text-gray-900">Choose locations from the map</p>
                     <p className="mt-1 text-sm text-gray-600">
                       Tap `Pickup Location` or `Drop-off Location` to open the map picker and confirm the exact point.
@@ -870,17 +870,17 @@ export function TaxiService() {
                   </div>
 
                   {distance && (
-                    <div className="bg-blue-50 rounded-lg p-4">
+                    <div className="bg-[#f5ead7] rounded-lg p-4">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-600">Estimated Fare</span>
-                        <span className="text-2xl font-bold text-blue-600">Rs. {calculateFare()}</span>
+                        <span className="text-2xl font-bold text-[#06213d]">Rs. {calculateFare()}</span>
                       </div>
                       <p className="text-xs text-gray-500">Based on {distance} km at Rs. {pricePerKm[normalBooking.vehicleType]}/km</p>
                       <p className="text-xs text-gray-500 mt-1">Final fare may vary based on traffic and route.</p>
                     </div>
                   )}
 
-                  <Button className="w-full h-12 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700" onClick={handleBookNormalTaxi}>
+                  <Button className="w-full h-12 bg-[#b77b1c] hover:bg-[#9a6516]" onClick={handleBookNormalTaxi}>
                     <Car className="w-5 h-5 mr-2" />
                     Book Now
                   </Button>
@@ -966,17 +966,17 @@ export function TaxiService() {
                     </select>
                   </div>
 
-                  <div className="bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg p-4">
+                  <div className="bg-gradient-to-r from-[#fbf6ec] to-[#f5ead7] rounded-lg p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <Calendar className="w-5 h-5 text-orange-600" />
-                      <span className="font-semibold text-orange-900">Multi-Day Package</span>
+                      <Calendar className="w-5 h-5 text-[#8a5a13]" />
+                      <span className="font-semibold text-[#06213d]">Multi-Day Package</span>
                     </div>
-                    <p className="text-sm text-orange-800">
+                    <p className="text-sm text-[#8a5a13]">
                       Our packages include driver accommodation and fuel charges. Get custom quote based on your itinerary.
                     </p>
                   </div>
 
-                  <Button className="w-full h-12 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700" onClick={handleBookPackageTaxi}>
+                  <Button className="w-full h-12 bg-[#b77b1c] hover:bg-[#9a6516]" onClick={handleBookPackageTaxi}>
                     <Calendar className="w-5 h-5 mr-2" />
                     Request Package Quote
                   </Button>
@@ -1000,8 +1000,8 @@ export function TaxiService() {
           </DialogHeader>
 
           <div className="p-6 pt-4">
-            <div className="mb-4 rounded-xl border border-orange-200 bg-orange-50 px-4 py-3">
-              <p className="text-xs uppercase tracking-wide text-orange-600">
+            <div className="mb-4 rounded-xl border border-[#ecd2a6] bg-[#fbf6ec] px-4 py-3">
+              <p className="text-xs uppercase tracking-wide text-[#8a5a13]">
                 {activePicker === "pickup" ? "Pickup point" : "Drop-off point"}
               </p>
               <p className="mt-1 text-sm text-gray-700">
@@ -1037,8 +1037,8 @@ export function TaxiService() {
 
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
                 <div className="flex flex-col items-center">
-                  <MapPin className="h-10 w-10 fill-orange-500 text-orange-500 drop-shadow-md" />
-                  <div className="-mt-2 h-3 w-3 rounded-full bg-orange-900/20 blur-[1px]" />
+                  <MapPin className="h-10 w-10 fill-[#b77b1c] text-[#b77b1c] drop-shadow-md" />
+                  <div className="-mt-2 h-3 w-3 rounded-full bg-[#06213d]/20 blur-[1px]" />
                 </div>
               </div>
             </div>
@@ -1046,7 +1046,7 @@ export function TaxiService() {
             <div className="mt-4 flex justify-end">
               <Button
                 type="button"
-                className="bg-orange-500 hover:bg-orange-600"
+                className="bg-[#b77b1c] hover:bg-[#9a6516]"
                 onClick={confirmMapSelection}
                 disabled={!selectionCoords || isResolvingSelection || isConfirmingSelection}
               >

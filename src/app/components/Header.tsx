@@ -1,7 +1,8 @@
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { openWhatsAppChat } from "../config/whatsapp";
+import { BrandLogo } from "./BrandLogo";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,32 +15,27 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <Plane className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-              WanderWay
-            </span>
-          </div>
+          <a href="#home" aria-label="Voyoroots home" className="-ml-4 sm:-ml-6">
+            <BrandLogo markClassName="h-14 w-72 sm:h-16 sm:w-96" />
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#home" className="text-gray-700 hover:text-[#06213d] transition-colors">
               Home
             </a>
-            <a href="#tours" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#tours" className="text-gray-700 hover:text-[#06213d] transition-colors">
               Tours
             </a>
-            <a href="#taxi" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#taxi" className="text-gray-700 hover:text-[#06213d] transition-colors">
               Taxi Service
             </a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#about" className="text-gray-700 hover:text-[#06213d] transition-colors">
               About
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#contact" className="text-gray-700 hover:text-[#06213d] transition-colors">
               Contact
             </a>
           </nav>
@@ -47,7 +43,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <Button 
-              className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700"
+              className="bg-[#06213d] hover:bg-[#0b3158]"
               onClick={handleBookNow}
             >
               Book Now
@@ -70,40 +66,40 @@ export function Header() {
             <nav className="flex flex-col gap-4">
               <a
                 href="#home"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
+                className="text-gray-700 hover:text-[#06213d] transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="#tours"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
+                className="text-gray-700 hover:text-[#06213d] transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Tours
               </a>
               <a
                 href="#taxi"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
+                className="text-gray-700 hover:text-[#06213d] transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Taxi Service
               </a>
               <a
                 href="#about"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
+                className="text-gray-700 hover:text-[#06213d] transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a
                 href="#contact"
-                className="text-gray-700 hover:text-blue-600 transition-colors py-2"
+                className="text-gray-700 hover:text-[#06213d] transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
-              <Button className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 mt-2" onClick={handleBookNow}>
+              <Button className="bg-[#06213d] hover:bg-[#0b3158] mt-2" onClick={handleBookNow}>
                 Book Now
               </Button>
             </nav>

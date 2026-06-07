@@ -1,6 +1,7 @@
 import { Search, MapPin, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
+import { MOTTO } from "./BrandLogo";
 
 export function Hero() {
   return (
@@ -12,19 +13,23 @@ export function Hero() {
           alt="Mountain landscape"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#06213d]/80 via-[#06213d]/45 to-black/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-32">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          Explore the World
-          <span className="block mt-2 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-            Your Way
+          <img
+            src="/images/font.png"
+            alt="Voyoroots"
+            className="mx-auto h-16 w-auto sm:h-20 md:h-24 lg:h-28"
+          />
+          <span className="block mt-2 text-[#d39a34]">
+            Travel Stories Begin Here
           </span>
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-gray-200">
-          Discover amazing destinations with our curated tour packages or travel in comfort with our premium taxi service
+          {MOTTO}
         </p>
 
         {/* Search Box */}
@@ -46,7 +51,7 @@ export function Hero() {
                 className="pl-12 h-12 border-gray-300 bg-gray-50"
               />
             </div>
-            <Button className="h-12 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700">
+            <Button className="h-12 bg-[#b77b1c] hover:bg-[#9a6516]">
               <Search className="w-5 h-5 mr-2" />
               Search
             </Button>
@@ -56,19 +61,19 @@ export function Hero() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-blue-400">500+</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#d39a34]">500+</div>
             <div className="text-gray-300 mt-2">Destinations</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-teal-400">10K+</div>
+            <div className="text-3xl md:text-4xl font-bold text-white">10K+</div>
             <div className="text-gray-300 mt-2">Happy Travelers</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-blue-400">24/7</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#d39a34]">24/7</div>
             <div className="text-gray-300 mt-2">Taxi Service</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-teal-400">100%</div>
+            <div className="text-3xl md:text-4xl font-bold text-white">100%</div>
             <div className="text-gray-300 mt-2">Satisfaction</div>
           </div>
         </div>

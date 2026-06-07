@@ -5,19 +5,19 @@ const stats = [
     icon: Award,
     value: "15+",
     label: "Years Experience",
-    color: "from-blue-500 to-blue-600",
+    color: "from-[#06213d] to-[#0b3158]",
   },
   {
     icon: Users,
     value: "50K+",
     label: "Happy Customers",
-    color: "from-teal-500 to-teal-600",
+    color: "from-[#b77b1c] to-[#d39a34]",
   },
   {
     icon: Globe,
     value: "500+",
     label: "Destinations",
-    color: "from-orange-500 to-orange-600",
+    color: "from-[#0b3158] to-[#06213d]",
   },
   {
     icon: Heart,
@@ -64,7 +64,7 @@ export function AboutSection() {
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#06213d] to-[#b77b1c] rounded-full flex items-center justify-center">
                   <Award className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -79,12 +79,12 @@ export function AboutSection() {
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Your Trusted Travel Partner
-              <span className="block mt-2 bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="block mt-2 bg-gradient-to-r from-[#06213d] to-[#b77b1c] bg-clip-text text-transparent">
                 Since 2009
               </span>
             </h2>
             <p className="text-gray-600 text-lg mb-6">
-              WanderWay has been crafting unforgettable travel experiences for over a decade. From breathtaking tour packages to reliable taxi services, we're committed to making your journey seamless and memorable.
+              Voyoroots has been crafting unforgettable travel experiences for over a decade. From breathtaking tour packages to reliable taxi services, we're committed to making your journey seamless and memorable.
             </p>
             <p className="text-gray-600 text-lg mb-8">
               Our team of travel experts handpicks each destination and ensures every detail is perfect. Whether you're seeking adventure in the mountains or relaxation on pristine beaches, we've got the perfect package for you.
