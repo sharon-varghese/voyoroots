@@ -1,18 +1,70 @@
-import { Search, MapPin, Calendar } from "lucide-react";
+import { type FormEvent, useEffect, useState } from "react";
+import { Search, MapPin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { MOTTO } from "./BrandLogo";
 
-export function Hero() {
+const backgroundImages = [
+  "/images/background.jpeg",
+  "/images/backgroung2.jpeg",
+  "/images/background3.jpeg",
+  "/images/background4.jpeg",
+];
+
+const searchInputClass = "h-12 border-gray-300 bg-white text-gray-900 placeholder:text-gray-500 [color-scheme:light]";
+
+type HeroSearch = {
+  destination: string;
+  date: string;
+};
+
+type HeroProps = {
+  onSearch: (search: HeroSearch) => void;
+};
+
+export function Hero({ onSearch }: HeroProps) {
+  const [activeBackgroundIndex, setActiveBackgroundIndex] = useState(0);
+  const [destination, setDestination] = useState("");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveBackgroundIndex((currentIndex) => (
+        (currentIndex + 1) % backgroundImages.length
+      ));
+    }, 4000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    onSearch({
+      destination: destination.trim(),
+      date,
+    });
+
+    document.getElementById("tours")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Images with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1673505413397-0cd0dc4f5854?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGxhbmRzY2FwZSUyMGFkdmVudHVyZSUyMHRyYXZlbHxlbnwxfHx8fDE3NzY0MTU4NDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="Mountain landscape"
-          className="w-full h-full object-cover"
-        />
+        {backgroundImages.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt="Voyoroots travel background"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === activeBackgroundIndex ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-[#06213d]/80 via-[#06213d]/45 to-black/60" />
       </div>
 
@@ -33,48 +85,51 @@ export function Hero() {
         </p>
 
         {/* Search Box */}
-        <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-4xl mx-auto">
+        <form onSubmit={handleSearch} className="bg-white rounded-2xl shadow-2xl p-6 max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
               <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <Input
                 type="text"
                 placeholder="Where to?"
-                className="pl-12 h-12 border-gray-300 bg-gray-50"
+                className={`pl-12 ${searchInputClass}`}
+                value={destination}
+                onChange={(event) => setDestination(event.target.value)}
               />
             </div>
             <div className="relative">
-              <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <Input
                 type="date"
                 placeholder="When?"
-                className="pl-12 h-12 border-gray-300 bg-gray-50"
+                className={searchInputClass}
+                value={date}
+                onChange={(event) => setDate(event.target.value)}
               />
             </div>
-            <Button className="h-12 bg-[#b77b1c] hover:bg-[#9a6516]">
+            <Button type="submit" className="h-12 bg-[#b77b1c] hover:bg-[#9a6516]">
               <Search className="w-5 h-5 mr-2" />
               Search
             </Button>
           </div>
-        </div>
+        </form>
 
-        {/* Stats */}
+        {/* Service Highlights */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-[#d39a34]">500+</div>
-            <div className="text-gray-300 mt-2">Destinations</div>
+            <div className="text-2xl md:text-3xl font-bold text-[#d39a34]">Curated</div>
+            <div className="text-gray-300 mt-2">Tour Packages</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-white">10K+</div>
-            <div className="text-gray-300 mt-2">Happy Travelers</div>
+            <div className="text-2xl md:text-3xl font-bold text-white">Local</div>
+            <div className="text-gray-300 mt-2">Travel Support</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-[#d39a34]">24/7</div>
-            <div className="text-gray-300 mt-2">Taxi Service</div>
+            <div className="text-2xl md:text-3xl font-bold text-[#d39a34]">Taxi</div>
+            <div className="text-gray-300 mt-2">Booking</div>
           </div>
           <div>
-            <div className="text-3xl md:text-4xl font-bold text-white">100%</div>
-            <div className="text-gray-300 mt-2">Satisfaction</div>
+            <div className="text-2xl md:text-3xl font-bold text-white">Custom</div>
+            <div className="text-gray-300 mt-2">Trip Planning</div>
           </div>
         </div>
       </div>

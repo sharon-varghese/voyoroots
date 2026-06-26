@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, MessageCircle, Youtube } from "lucide-react";
 import { MOTTO } from "./BrandLogo";
 
 export function Footer() {
@@ -6,16 +6,16 @@ export function Footer() {
     <footer id="contact" className="bg-gradient-to-br from-[#06172a] to-[#0b2541] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+        <div className="pt-8 pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-4">
             <div className="mb-4 flex flex-col items-start">
               <img 
                 src="/images/logo_dark_theme.png" 
                 alt="Voyoroots"
-                className="h-24 w-64 object-contain"
+                className="h-24 w-80 max-w-full object-contain object-left"
               />
-              <p className="mt-2 text-sm font-medium text-white/80">
+              <p className="text-sm font-medium text-white/80">
                 {MOTTO}
               </p>
             </div>
@@ -24,32 +24,40 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1B4DQCBFGb/"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@voyoroots?si=3AVTOp9gdHKdJtgd"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="Twitter"
+                aria-label="YouTube"
               >
-                <Twitter className="w-5 h-5" />
+                <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/voyoroots?igsh=MThsemZldXBja2c0Zg=="
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/917025752005"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
-                aria-label="LinkedIn"
+                aria-label="WhatsApp"
               >
-                <Linkedin className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -125,13 +133,13 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#d39a34] flex-shrink-0 mt-1" />
                 <span className="text-gray-400">
-                  123 Travel Street, Adventure City, TC 12345
+                  Voyoroots, EMS Road, Thengode
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+917025752005" className="text-gray-400 hover:text-white transition-colors">
+                  +91 70257 52005
                 </a>
               </li>
               <li className="flex items-center gap-3">

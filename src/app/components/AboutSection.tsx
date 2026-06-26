@@ -1,4 +1,4 @@
-import { Award, Users, Globe, Heart } from "lucide-react";
+import { Award, MapPinned, Users, Globe, Heart } from "lucide-react";
 
 const stats = [
   {
@@ -15,8 +15,8 @@ const stats = [
   },
   {
     icon: Globe,
-    value: "500+",
-    label: "Destinations",
+    value: "150+",
+    label: "Curated Trips",
     color: "from-[#0b3158] to-[#06213d]",
   },
   {
@@ -37,24 +37,24 @@ export function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <img
-                  src="https://images.unsplash.com/photo-1774704089596-64faa8364586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaXJwb3J0JTIwYWlycGxhbmUlMjB0cmF2ZWwlMjBqb3VybmV5fGVufDF8fHx8MTc3NjQxNTg0OXww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/gallery/gallery4.jpeg"
                   alt="Travel"
                   className="rounded-2xl shadow-lg h-64 w-full object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1714412192114-61dca8f15f68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFyYWRpc2UlMjB2YWNhdGlvbnxlbnwxfHx8fDE3NzYzMzUyNTh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/gallery/gallery3.jpeg"
                   alt="Beach"
                   className="rounded-2xl shadow-lg h-48 w-full object-cover"
                 />
               </div>
               <div className="space-y-4 mt-8">
                 <img
-                  src="https://images.unsplash.com/photo-1760502431557-2976b538959b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjaXR5JTIwc2t5bGluZSUyMHVyYmFufGVufDF8fHx8MTc3NjQxNTg0OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/gallery/gallery2.jpeg"
                   alt="City"
                   className="rounded-2xl shadow-lg h-48 w-full object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1554369369-2efa1c2be9d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNlcnQlMjBzYWZhcmklMjBhZHZlbnR1cmV8ZW58MXx8fHwxNzc2MzUwMjk4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/gallery/gallery1.png"
                   alt="Desert"
                   className="rounded-2xl shadow-lg h-64 w-full object-cover"
                 />
@@ -65,11 +65,11 @@ export function AboutSection() {
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#06213d] to-[#b77b1c] rounded-full flex items-center justify-center">
-                  <Award className="w-8 h-8 text-white" />
+                  <MapPinned className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-lg">Award Winning</div>
-                  <div className="text-sm text-gray-600">Travel Company</div>
+                  <div className="font-bold text-lg">Trusted Travel</div>
+                  <div className="text-sm text-gray-600">Local Experts</div>
                 </div>
               </div>
             </div>

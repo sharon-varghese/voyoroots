@@ -756,9 +756,11 @@ export function TaxiService() {
               ))}
             </div>
 
+            {/*
             <Button className="bg-[#b77b1c] hover:bg-[#9a6516] px-8">
               Download App
             </Button>
+            */}
           </div>
 
           <div>
