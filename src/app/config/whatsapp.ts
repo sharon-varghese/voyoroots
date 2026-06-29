@@ -3,7 +3,7 @@
 // Format: country code + number (without + or spaces)
 // Example: For +1 234-567-8900, use "12345678900"
 
-export const COMPANY_WHATSAPP = "917025752005";
+export const COMPANY_WHATSAPP = "919400721005";
 
 // Helper function to create WhatsApp URL
 export function createWhatsAppUrl(message: string): string {
